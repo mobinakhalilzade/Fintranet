@@ -1,0 +1,69 @@
+<div class="stepsdemo-content">
+  <p-card>
+    <ng-template pTemplate="title"> Fill the below items </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="step2Form" (ngSubmit)="submitStep2FormForm(step2Form)">
+        <div class="p-fluid formgrid grid">
+          <div class="field col-12 md:col-6">
+            <div class="field my-3">
+              <label for="amount">Amount</label>
+              <input
+                formControlName="amount"
+                id="amount"
+                type="number"
+                required
+                pInputText
+              />
+            </div>
+          </div>
+          <div class="field col-12 md:col-6 my-3">
+            <label for="amount">Date</label>
+            <p-calendar
+              formControlName="date"
+              [minDate]="nextDay"
+              [maxDate]="nextFiveDays"
+              [readonlyInput]="true"
+            ></p-calendar>
+          </div>
+          <div class="field col-12 md:col-6 my-3">
+            <label for="status">Status</label>
+            <p-dropdown
+              inputId="status"
+              [options]="statuses"
+              formControlName="status"
+              optionLabel="name"
+              placeholder="Select a status"
+            ></p-dropdown>
+          </div>
+          <div class="field my-3">
+            <label for="lastname">Source</label>
+            <input
+              formControlName="source"
+              id="source"
+              type="text"
+              required
+              pInputText
+            />
+          </div>
+        </div>
+        <button pButton type="submit">Submit</button>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="flex justify-between">
+        <p-button
+          label="Back"
+          (onClick)="prevPage()"
+          icon="pi pi-angle-left"
+        ></p-button>
+        <p-button
+          [disabled]="!submitted"
+          label="Next"
+          (onClick)="nextPage()"
+          icon="pi pi-angle-right"
+          iconPos="right"
+        ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
