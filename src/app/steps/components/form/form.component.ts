@@ -42,16 +42,21 @@ export class FormComponent implements OnInit {
       amount: [Validators.required],
       date: [Validators.required],
       status: [Validators.required],
-      source: ['', Validators.required],
+      source: ['', [Validators.required, Validators.pattern("^[a-zA-Z -']+")]],
     });
   }
 
   submitStep2FormForm(form: FormGroup) {
+    if (form.controls['source'].status === 'INVALID') {
+      alert('Please use only letters in source field');
+      return
+    }
     if (form.valid) {
       this.dataSharing.form.next(form.value);
       this.submitted = true;
     } else {
       alert('Please fill the form');
+      return
     }
   }
 

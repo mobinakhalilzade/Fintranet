@@ -7,7 +7,7 @@ import { UploadComponent } from './steps/components/upload/upload.component';
 import { StepsComponent } from './steps/steps.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'steps', pathMatch: 'full' },
+  { path: '', redirectTo: 'steps/upload', pathMatch: 'full' },
   {
     path: 'steps',
     component: StepsComponent,

@@ -2,15 +2,15 @@
   <img *ngIf="image" [src]="image" alt="" width="200" height="250" />
   <div>
     <h3 class="text-lg">Form data</h3>
-    <label>Amount :{{ form?.amount }}</label>
-    <label>Date :{{ form?.date | date }}</label>
-    <label>Status :{{ form?.status.name }}</label>
-    <label>Source :{{ form?.source }}</label>
+    <p>Amount :{{ form?.amount }}</p>
+    <p>Date :{{ form?.date | date }}</p>
+    <p>Status :{{ form?.status?.name }}</p>
+    <p>Source :{{ form?.source }}</p>
   </div>
-  <div>
+  <div class="mt-4">
     <h3 class="text-lg">User Info</h3>
-    <label>Id :{{ user?.id }}</label>
-    <label>Firstname :{{ user?.firstname }}</label>
-    <label>Lastname :{{ user?.lastname }}</label>
+    <p>Id :{{ user?.id }}</p>
+    <p>Firstname :{{ user?.firstname }}</p>
+    <p>Lastname :{{ user?.lastname }}</p>
   </div>
 </div>

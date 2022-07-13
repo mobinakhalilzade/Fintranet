@@ -24,16 +24,14 @@ export class OverviewComponent implements OnInit {
   }
 
   getForm() {
-    this.dataSharing.form.subscribe((res) => {
+    this.dataSharing.formData.subscribe((res) => {
       this.form = res;
-      console.log(this.form);
     });
   }
 
   getUser() {
-    this.dataSharing.user.subscribe((res) => {
+    this.dataSharing.userData.subscribe((res) => {
       this.user = res;
-      console.log(this.user);
     });
   }
 }
